@@ -4,12 +4,12 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
       <nav className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <a href="/" className="font-serif text-2xl tracking-wide text-foreground">
-            Wabi
+            Камелот
           </a>
 
           {/* Desktop Navigation */}
@@ -18,27 +18,35 @@ export function Header() {
               href="#philosophy"
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
             >
-              Философия
+              О нас
             </a>
             <a
               href="#services"
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
             >
-              Услуги
+              Меню
             </a>
             <a
               href="#process"
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
             >
-              Процесс
+              Шеф-повар
             </a>
             <a
               href="#contact"
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-500"
             >
-              Контакты
+              Забронировать
             </a>
           </div>
+
+          {/* CTA Button Desktop */}
+          <a
+            href="tel:+79203805588"
+            className="hidden md:inline-flex items-center gap-2 px-6 py-3 bg-terracotta text-white text-sm tracking-widest uppercase hover:bg-terracotta/90 transition-all duration-500"
+          >
+            Позвонить
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -60,7 +68,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${isMenuOpen ? "max-h-64 pb-8" : "max-h-0"}`}
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${isMenuOpen ? "max-h-80 pb-8" : "max-h-0"}`}
         >
           <div className="flex flex-col gap-6 pt-4">
             <a
@@ -68,28 +76,34 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
-              Философия
+              О нас
             </a>
             <a
               href="#services"
               onClick={() => setIsMenuOpen(false)}
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
-              Услуги
+              Меню
             </a>
             <a
               href="#process"
               onClick={() => setIsMenuOpen(false)}
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
-              Процесс
+              Шеф-повар
             </a>
             <a
               href="#contact"
               onClick={() => setIsMenuOpen(false)}
               className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
-              Контакты
+              Забронировать
+            </a>
+            <a
+              href="tel:+79203805588"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-terracotta text-white text-sm tracking-widest uppercase w-fit"
+            >
+              Позвонить
             </a>
           </div>
         </div>

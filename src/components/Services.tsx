@@ -1,57 +1,34 @@
 import { useEffect, useRef, useState } from "react"
+import Icon from "@/components/ui/icon"
 
-const services = [
+const dishes = [
   {
-    title: "Жилые интерьеры",
-    description: "Полное преображение дома с учётом вашего образа жизни. От отдельных комнат до целых резиденций.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-        />
-      </svg>
-    ),
+    title: "Паста Карбонара",
+    description: "Классика итальянской кухни в идеальном исполнении. Шелковистый соус, хрустящая панчетта, свежий пармезан.",
+    price: "580 ₽",
+    tag: "Хит",
+    icon: "UtensilsCrossed",
   },
   {
-    title: "Планировка",
-    description: "Продуманные решения, создающие естественный поток и функциональные зоны для жизни, работы и отдыха.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-        />
-      </svg>
-    ),
+    title: "Пенне с цыпленком",
+    description: "Пенне с нежным цыпленком и вялеными томатами — авторский рецепт шефа Николая с ярким средиземноморским акцентом.",
+    price: "580 ₽",
+    tag: "Авторское",
+    icon: "ChefHat",
   },
   {
-    title: "Подбор материалов",
-    description: "Натуральные материалы и авторские предметы ручной работы, которые красиво стареют и рассказывают историю.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-        />
-      </svg>
-    ),
+    title: "Сковородка со свиной вырезкой",
+    description: "Сытное, истинно «рыцарское» горячее. Нежная свиная вырезка с сезонными овощами на раскалённой сковородке.",
+    price: "680 ₽",
+    tag: "Рыцарское",
+    icon: "Flame",
   },
   {
-    title: "Светодизайн",
-    description: "Многоуровневое освещение, меняющееся в течение дня, создающее атмосферу и поддерживающее благополучие.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-        />
-      </svg>
-    ),
+    title: "Осеннее меню от шефа",
+    description: "Николай регулярно обновляет сезонную карту. Только свежие локальные продукты и нестандартные сочетания.",
+    price: "Сезонное",
+    tag: "Сезон",
+    icon: "Leaf",
   },
 ]
 
@@ -86,34 +63,60 @@ export function Services() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Наши услуги
+            Наша кухня
           </p>
           <h2
             className={`font-serif text-4xl md:text-5xl lg:text-6xl font-light text-foreground text-balance transition-all duration-1000 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Что мы делаем
+            Блюда, которые запоминаются
           </h2>
+          <p
+            className={`text-muted-foreground mt-6 max-w-xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            Большие порции, понятная, но доведённая до идеала европейская и авторская кухня. Средний чек, который приятно удивит.
+          </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Dishes Grid */}
         <div className="grid md:grid-cols-2 gap-px bg-border">
-          {services.map((service, index) => (
+          {dishes.map((dish, index) => (
             <div
-              key={service.title}
+              key={dish.title}
               className={`group bg-background p-10 lg:p-14 transition-all duration-1000 hover:bg-card ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${300 + index * 150}ms` }}
             >
-              <div className="text-sage mb-6 transition-transform duration-500 group-hover:scale-110">
-                {service.icon}
+              <div className="flex items-start justify-between mb-6">
+                <div className="text-terracotta transition-transform duration-500 group-hover:scale-110">
+                  <Icon name={dish.icon} size={32} fallback="UtensilsCrossed" />
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs tracking-widest uppercase text-muted-foreground px-3 py-1 border border-border">
+                    {dish.tag}
+                  </span>
+                  <span className="font-serif text-xl text-terracotta">{dish.price}</span>
+                </div>
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">{dish.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{dish.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Bottom note */}
+        <div
+          className={`text-center mt-12 transition-all duration-1000 delay-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <p className="text-sm text-muted-foreground">
+            Зона Настоичной · Концептуальная барная стойка · Банкетные залы
+          </p>
         </div>
       </div>
     </section>

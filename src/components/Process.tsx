@@ -1,29 +1,29 @@
 import { useEffect, useRef, useState } from "react"
 
-const steps = [
+const facts = [
   {
     number: "01",
-    title: "Слушаем",
+    title: "Шеф Николай",
     description:
-      "Мы начинаем с присутствия. Понимаем не только ваше пространство, но и то, как вы в нём живёте — ваши ритмы, потребности, стремления.",
+      "Николай — душа нашей кухни. Он работает с сезонными продуктами и регулярно обновляет меню, сохраняя баланс между классикой и авторским взглядом. Каждое блюдо — это личная история.",
   },
   {
     number: "02",
-    title: "Видим",
+    title: "Философия большой тарелки",
     description:
-      "Вместе исследуем возможности. Мудборды, образцы материалов и пространственные концепции рождаются из нашего диалога.",
+      "Мы убеждены: гость должен уходить сытым и довольным. Большие порции, честные ингредиенты и приятный средний чек — наш негласный договор с каждым, кто приходит в Камелот.",
   },
   {
     number: "03",
-    title: "Создаём",
+    title: "Зона Настоичной",
     description:
-      "С намерением и заботой воплощаем видение в жизнь. Каждая деталь продумана, каждый элемент осмыслен.",
+      "Наша гордость — концептуальная зона с авторскими и классическими настойками. Идеальное место, чтобы отметить конец рыцарской рабочей недели в хорошей компании.",
   },
   {
     number: "04",
-    title: "Живём",
+    title: "Банкеты и мероприятия",
     description:
-      "Пространство готово, но путешествие продолжается. Мы следим, чтобы ваш дом развивался вместе с вами.",
+      "Камелот — это не только вечерний ресторан. Мы проводим корпоративы, дни рождения и частные вечеринки. Свяжитесь с нами, и мы обсудим вашу идею.",
   },
 ]
 
@@ -60,23 +60,23 @@ export function Process() {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
-                Наш процесс
+                Шеф-повар
               </p>
               <h2
                 className={`font-serif text-4xl md:text-5xl font-light text-foreground mb-6 text-balance transition-all duration-1000 delay-200 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                Путь
-                <span className="italic"> осознанности</span>
+                Кухня
+                <span className="italic"> с характером</span>
               </h2>
               <p
                 className={`text-muted-foreground leading-relaxed transition-all duration-1000 delay-300 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                Настоящие пространства не создаются в спешке. Они раскрываются через вдумчивый процесс,
-                уважающий и архитектуру, и людей, которые будут здесь жить.
+                За каждым блюдом стоит история. Шеф Николай и его команда работают без компромиссов — только
+                настоящие вкусы, честные продукты и искренняя забота о госте.
               </p>
             </div>
           </div>
@@ -84,21 +84,21 @@ export function Process() {
           {/* Right Column - Steps */}
           <div className="lg:col-span-8">
             <div className="space-y-0">
-              {steps.map((step, index) => (
+              {facts.map((fact, index) => (
                 <div
-                  key={step.number}
+                  key={fact.number}
                   className={`group py-10 lg:py-14 border-t border-border last:border-b transition-all duration-1000 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: `${400 + index * 150}ms` }}
                 >
                   <div className="flex gap-8 lg:gap-12">
-                    <span className="font-serif text-4xl lg:text-5xl text-stone/50 group-hover:text-sage transition-colors duration-500">
-                      {step.number}
+                    <span className="font-serif text-4xl lg:text-5xl text-stone/50 group-hover:text-terracotta transition-colors duration-500">
+                      {fact.number}
                     </span>
                     <div>
-                      <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">{step.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed max-w-xl">{step.description}</p>
+                      <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">{fact.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed max-w-xl">{fact.description}</p>
                     </div>
                   </div>
                 </div>

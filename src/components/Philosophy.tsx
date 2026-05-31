@@ -32,12 +32,17 @@ export function Philosophy() {
             }`}
           >
             <img
-              src="/minimalist-japanese-interior-design-with-natural-w.jpg"
-              alt="Минималистичный интерьер с натуральным деревом"
+              src="/placeholder.jpg"
+              alt="Интерьер гастробара Камелот"
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Overlay accent */}
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-terracotta/80" />
+            {/* Year badge */}
+            <div className="absolute top-6 right-6 bg-background/90 px-4 py-3 text-center">
+              <p className="font-serif text-2xl text-terracotta">1999</p>
+              <p className="text-xs tracking-widest uppercase text-muted-foreground">год основания</p>
+            </div>
           </div>
 
           {/* Content */}
@@ -47,7 +52,7 @@ export function Philosophy() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Наша философия
+              Наша история
             </p>
 
             <h2
@@ -55,10 +60,10 @@ export function Philosophy() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Искусство
-              <span className="italic"> осознанной</span>
+              Больше, чем
+              <span className="italic"> просто</span>
               <br />
-              жизни
+              ресторан
             </h2>
 
             <div
@@ -67,13 +72,14 @@ export function Philosophy() {
               }`}
             >
               <p>
-                Мы верим, что каждое пространство таит в себе потенциал для преображения. Не через добавление,
-                а через бережное вычитание — открывая то, что всегда было предначертано.
+                С 1999 года Камелот — это особое место в сердце Костромы, где рыцарское благородство встречается
+                с современными гастрономическими трендами. Мы расположены на Советской площади, в исторических
+                Масляных рядах — в самом сердце города.
               </p>
               <p>
-                Наш подход вдохновлён японской концепцией <em className="text-foreground">ма</em> — глубокой
-                красотой пустоты — и скандинавским пониманием
-                <em className="text-foreground"> хюгге</em>, этого ощущения уютного умиротворения.
+                Наша концепция — это <em className="text-foreground">«современный средневековый замок»</em>: массивные деревянные текстуры,
+                уютная атмосфера, концептуальная барная стойка и легендарная зона Настоичной,
+                где каждый вечер становится маленьким праздником.
               </p>
             </div>
 
@@ -84,16 +90,16 @@ export function Philosophy() {
               }`}
             >
               <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">12</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Лет опыта</p>
+                <p className="font-serif text-3xl md:text-4xl text-terracotta">25+</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Лет в Костроме</p>
               </div>
               <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">140+</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Проектов</p>
+                <p className="font-serif text-3xl md:text-4xl text-terracotta">100+</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Блюд в меню</p>
               </div>
               <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">8</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Наград</p>
+                <p className="font-serif text-3xl md:text-4xl text-terracotta">до 3:00</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">В выходные</p>
               </div>
             </div>
           </div>
